@@ -49,7 +49,7 @@
                                     <td>ready</td>
                                     <td>30.000</td>
                                     <td>
-                                        <button class="btn btn-danger btn-sm px-2"><i class="material-icons">delete_outline</i></button>
+                                        <button class="btn btn-danger btn-sm px-2" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="material-icons">delete_outline</i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -58,7 +58,7 @@
                                     <td>ready</td>
                                     <td>70.000</td>
                                     <td>
-                                        <button class="btn btn-danger btn-sm px-2"><i class="material-icons">delete_outline</i></button>
+                                        <button class="btn btn-danger btn-sm px-2" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="material-icons">delete_outline</i></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -73,7 +73,13 @@
                 <h4 class="card-header card-header-info">Haircut</h4>
                 <div class="card-body">
                     <img class="card-img" src="{{ asset('assets/img/haircut.jpg') }}" alt="">
-                    <a href="#" class="btn btn-primary w-100 mt-2">Add</a>
+                    <div class="price mt-1">
+                        <strong>Rp. 50.000</strong>
+                    </div>
+                    <div class="card-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, expedita excepturi! Quae earum nesciunt eveniet ipsa saepe voluptas sed, possimus sint, perspiciatis officiis architecto molestias odit reiciendis cupiditate placeat veniam!
+                    </div>
+                    <a href="#" class="btn btn-success w-100 mt-2">Tambah</a>
                 </div>
             </div>
         </div>
@@ -82,7 +88,13 @@
                 <h4 class="card-header card-header-info">Haircut</h4>
                 <div class="card-body">
                     <img class="card-img" src="{{ asset('assets/img/haircut.jpg') }}" alt="">
-                    <a href="#" class="btn btn-primary w-100 mt-2">Add</a>
+                    <div class="price mt-1">
+                        <strong>Rp. 50.000</strong>
+                    </div>
+                    <div class="card-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, expedita excepturi! Quae earum nesciunt eveniet ipsa saepe voluptas sed, possimus sint, perspiciatis officiis architecto molestias odit reiciendis cupiditate placeat veniam!
+                    </div>
+                    <a href="#" class="btn btn-success w-100 mt-2">Tambah</a>
                 </div>
             </div>
         </div>
@@ -91,7 +103,13 @@
                 <h4 class="card-header card-header-info">Facial</h4>
                 <div class="card-body">
                     <img class="card-img" src="{{ asset('assets/img/facial.jpg') }}" alt="">
-                    <a href="#" class="btn btn-primary w-100 mt-2">Add</a>
+                    <div class="price mt-1">
+                        <strong>Rp. 50.000</strong>
+                    </div>
+                    <div class="card-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, expedita excepturi! Quae earum nesciunt eveniet ipsa saepe voluptas sed, possimus sint, perspiciatis officiis architecto molestias odit reiciendis cupiditate placeat veniam!
+                    </div>
+                    <a href="#" class="btn btn-success w-100 mt-2">Tambah</a>
                 </div>
             </div>
         </div>
@@ -100,7 +118,13 @@
                 <h4 class="card-header card-header-info">Facial</h4>
                 <div class="card-body">
                     <img class="card-img" src="{{ asset('assets/img/facial.jpg') }}" alt="">
-                    <a href="#" class="btn btn-primary w-100 mt-2">Add</a>
+                    <div class="price mt-1">
+                        <strong>Rp. 50.000</strong>
+                    </div>
+                    <div class="card-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, expedita excepturi! Quae earum nesciunt eveniet ipsa saepe voluptas sed, possimus sint, perspiciatis officiis architecto molestias odit reiciendis cupiditate placeat veniam!
+                    </div>
+                    <a href="#" class="btn btn-success w-100 mt-2">Tambah</a>
                 </div>
             </div>
         </div>
