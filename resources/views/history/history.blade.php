@@ -17,7 +17,7 @@
                                     <th>Jenis Layanan/Paket</th>
                                     <th>Total Biaya</th>
                                     <th>Status</th>
-                                    <th>Aksi</th>
+                                    <th style="width: 92px">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -87,9 +87,58 @@
       </div>
     </div>
 </div>
+<style>
+  .print-body table {
+    width: 100%;
+    white-space: nowrap;
+    font-size: 12px;
+    border-collapse: collapse;
+  }
+  /* .print-body .detail tr td {
+    padding-bottom: 5px;
+  }
+  .print-body .detail tr:last-child td {
+    padding-bottom: 10px;
+  } */
+  .print-body .detail td:first-child {
+    font-size: 11px;
+  }
+  .print-body .detail td:last-child {
+    font-weight: 600;
+  }
+  .print-body .detail td:first-child div:first-child {
+    font-weight: 500;
+    height: 14px;
+  }
+  @media screen {
+    #printSection {
+        display: none;
+        width: 75mm;
+        max-width: 8cm;
+    }
+  }
+
+  @media print {
+    body * {
+      visibility:hidden;
+    }
+    #printSection, #printSection * {
+      visibility:visible;
+    }
+    #printSection {
+      position:absolute;
+      left:50%;
+      top:0;
+    }
+    #printThis {
+      position: relative;
+      left: -50%;
+    }
+  }
+</style>
 <div class="modal fade" id="printModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog d-flex justify-content-center" role="document">
-      <div class="modal-content" style="width: 80mm;">
+      <div class="modal-content" style="width: 8cm;">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -97,13 +146,79 @@
           </button>
         </div>
         <div class="modal-body" id="printThis">
-          
+          <div class="print-header">
+            <div style="float: left">
+              <strong>SALON APP</strong>
+              <div style="font-size: 11px; height: 16px;">Jl. xxxx xxxx No.xx</div>
+              <div style="font-size: 11px">08xx-xxxx-xxxx</div>
+            </div>
+            <div style="float: right; border: 1px solid #000; text-align: center;">
+              <div style="font-size: 10px; padding: 0 5px; border-bottom: 1px solid #000">No Antrian</div>
+              <div style="font-weight: 700; font-size: 20px; padding: 5px 0;">01</div>
+            </div>
+          </div>
+          <div class="print-body">
+            <table style="border-bottom: 1px solid #ccc">
+              <tr>
+                <td>Tanggal</td>
+                <td align="right">16/06/2021 10:21</td>
+              </tr>
+              <tr>
+                <td>Pelanggan</td>
+                <td align="right">Salsabila</td>
+              </tr>
+            </table>
+            <table class="detail" style="border-bottom: 1px solid #ccc">
+              <tr>
+                <td>
+                  <div>Potong Rambut</div>
+                  <div>1 x 30.000</div>
+                </td>
+                <td align="right">30.000</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Potong Rambut</div>
+                  <div>1 x 30.000</div>
+                </td>
+                <td align="right">30.000</td>
+              </tr>
+            </table>
+            <table class="detail" style="border-bottom: 1px solid #ccc">
+              <tr>
+                <td style="font-weight: 600">JUMLAH TOTAL</td>
+                <td align="right">60.000</td>
+              </tr>
+            </table>
+            <div style="text-align:center; margin-top: 5px; font-size: 12px;">TERIMA KASIH</div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary px-3" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary px-3"><i class="material-icons mr-1">print</i>Print</button>
+          <button type="button" class="btn btn-primary px-3" id="btnPrint"><i class="material-icons mr-1">print</i>Print</button>
         </div>
       </div>
     </div>
 </div>
+<script>
+  document.getElementById("btnPrint").onclick = function () {
+    printElement(document.getElementById("printThis"));
+  }
+
+  function printElement(elem) {
+    var domClone = elem.cloneNode(true);
+    
+    var $printSection = document.getElementById("printSection");
+    
+    if (!$printSection) {
+        var $printSection = document.createElement("div");
+        $printSection.id = "printSection";
+        document.body.appendChild($printSection);
+    }
+    
+    $printSection.innerHTML = "";
+    $printSection.appendChild(domClone);
+    window.print();
+  }
+</script>
 @endsection
