@@ -30,7 +30,7 @@
         </a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link" href="report">
+        <a class="nav-link" href="cust-report">
             <i class="material-icons">summarize</i>
             <p>Report</p>
         </a>

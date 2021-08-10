@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPS v.7</title>
+
+    <link rel="shortcut icon" href="{{ asset('assets/image/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="struk.css">
+
+    <style type="text/css">
+        #text-lined {
+            text-decoration-line: overline
+        }
+    </style>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: arial;
+            font-size: 10px;
+            background: #eee;
+        }
+
+        .pl-head {
+            display: block;
+            width: 100%;
+            height: 34px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .pl-head strong {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 34px;
+            padding: 0 10px;
+        }
+
+        .pl-head div {
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 34px;
+            padding: 0 10px;
+        }
+
+        .pl-head a,
+        .pl-head .pl-close {
+            display: inline-block;
+            color: #fff;
+            background: #ce007c;
+            background: -moz-linear-gradient(90deg, #ce007c 0%, #ed1c49 100%);
+            background: -webkit-linear-gradient(90deg, #ce007c 0%, #ed1c49 100%);
+            background: linear-gradient(90deg, #ce007c 0%, #ed1c49 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ce007c", endColorstr="#ed1c49", GradientType=1);
+            padding: 5px 10px;
+            margin-left: 3px;
+            font-size: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            -webkit-transition: all 0.2s ease-out 0s;
+            -moz-transition: all 0.2s ease-out 0s;
+            -ms-transition: all 0.2s ease-out 0s;
+            -o-transition: all 0.2s ease-out 0s;
+            transition: all 0.2s ease-out 0s;
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            filter: grayscale(100%);
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        .pl-head a:hover,
+        .pl-head .pl-close:hover {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            filter: grayscale(0);
+            cursor: pointer;
+        }
+
+        .struk {
+            display: table;
+            margin: 0 auto;
+            margin-top: 53px;
+            font-family: arial;
+        }
+
+        .container {
+            display: block;
+            background: #fff;
+            width: 6cm;
+            margin: 0 1cm;
+            padding: 10px;
+        }
+
+        .border {
+            display: block;
+            border-bottom: 0.025em solid #999;
+            margin: 5px 0;
+        }
+
+        .logo {
+            display: block;
+            padding-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        center strong {
+            font-size: 12px;
+        }
+
+        center p {
+            margin: 4px 0;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table td span {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 15px;
+            background: rgb(255, 255, 191);
+            border: 1px dotted #000;
+        }
+
+        .head-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .head-title::before,
+        .head-title::after {
+            content: '';
+            display: block;
+            width: 35%;
+            border-bottom: 0.025em dashed #999;
+        }
+
+        .attachment {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(210mm - 30px);
+            height: calc(148mm - 30px);
+            border: 1px solid #000;
+            background: #fff;
+            margin: 0 auto;
+        }
+
+        @media print {
+            body {
+                overflow: auto;
+            }
+
+            .struk {
+                background: #fff;
+            }
+
+            .pl-head {
+                display: none;
+            }
+
+            .pl-area {
+                margin-top: 0;
+                margin: 0 inherit;
+                left: 0;
+            }
+
+            .struk {
+                border: none;
+                margin-top: 0;
+                padding-left: 0.8cm;
+                padding-top: 0;
+            }
+
+            .container {
+                margin: 0 0;
+                padding: 0;
+            }
+
+            .logo {
+                padding-top: 0;
+            }
+
+            .attachment {
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pl-head">
+        <strong>Print Struk</strong>
+        <div>
+            <a href="#" onclick="PrintStruk()">Print Sekarang</a>
+            <a href="#" class="but-main"><i class="fa fa-times"></i>Keluar</a>
+        </div>
+    </div>
+
+    <div class="struk">
+        <div class="container">
+            <center>
+                <strong>NAMA TOKO</strong><br>
+                Jl. xxx xxx xxxx No. xxx<br>
+                Jakarta Utara, Indonesia<br>
+                <p>Phone: 021-xxx xxx</p>
+            </center>
+            <div class="border" style="margin-bottom: 10px;"></div>
+            <table>
+                <tr>
+                    <td><strong>Kode Order</strong></td>
+                    <td style="text-align: right;"><strong>ASD00001201222</strong></td>
+                </tr>
+            </table>
+            <div class="head-title">Produk / Jasa</div>
+            <table>
+                <tr>
+                    <td>Creambath</td> <!-- Jasa/Paket -->
+                    <td style="text-align: right;">30.000</td> <!-- Harga -->
+                </tr>
+                <tr>
+                    <td>Creambath</td> <!-- Jasa/Paket -->
+                    <td style="text-align: right;">30.000</td> <!-- Harga -->
+                </tr>
+                <tr>
+                    <td>Creambath</td> <!-- Jasa/Paket -->
+                    <td style="text-align: right;">30.000</td> <!-- Harga -->
+                </tr>
+                <tr>
+                    <td>Creambath</td> <!-- Jasa/Paket -->
+                    <td style="text-align: right;">30.000</td> <!-- Harga -->
+                </tr>
+                <tr>
+                    <td>Creambath</td> <!-- Jasa/Paket -->
+                    <td style="text-align: right;">30.000</td> <!-- Harga -->
+                </tr>
+            </table>
+            <div class="head-title">
+                <p style="width: 55%; margin: 0;">Payment Method</p>
+            </div>
+            <table>
+                <tr>
+                    <td>Total</td>
+                    <td style="text-align: right;">120.000</td>
+                </tr>
+                <tr>
+                    <td>Diskon</td>
+                    <td style="text-align: right;">10.000</td>
+                </tr>
+                <tr>
+                    <td>Cash</td>
+                    <td style="text-align: right;">200.000</td>
+                </tr>
+                <tr>
+                    <td>Kembalian</td>
+                    <td style="text-align: right;">90.000</td>
+                </tr>
+            </table>
+            <div class="border"></div>
+        </div>
+    </div>
+    <script>
+        window.PrintStruk = function(){
+            window.print();
+        }
+    </script>
+</body>
+</html>
